@@ -2,7 +2,35 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <img src="/WordCloudPicture/2020-06-28.png" />
+        <button onclick="Test()">123123</button>
+    </div>
+<script type="text/javascript">
+    function Test() {
+        debugger;
+        $.ajax({
+            type: 'POST',
+            url: 'Home/DM',
+            //data: data,
+            dataType: "json",
+            cache: false,
+            success: function (_data) {
+                console.log(_data);
+                if (_data.ErrCode == "0") {
+                    Saveflag = true
+                    layer.msg(_data.Data, {
+                        time: 1000
+                    }, function () {
+                        CloseLayDialog();
+                    });
+                }
+                else {
+                    alert(_data.ErrInfo);
+                }
+            }
+
+        });
+    }
+</script>

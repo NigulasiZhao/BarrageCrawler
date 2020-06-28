@@ -4,4 +4,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\WordCloudPicture\2020-06-28.png" />
+    <None Include="wwwroot\WordCloudPicture\2020-06-289711764d-646d-4717-b2a8-f2f85dd4bbd4.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jieba.NET" Version="0.42.2" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+    <PackageReference Include="WordCloud" Version="1.0.0.3" />
+  </ItemGroup>
+
 </Project>
